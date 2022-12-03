@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* 초기화 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   font-family: 'NotoSansKR';
+}
+a {
+    text-decoration: none;
+ }
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+ }
+ .nav{
+    width: 100%;
+    height: 168px;
+    margin-top: 100px;
+ }
+ .textbox {
+    width: 580px;
+    height: 100%;
+    float: left;
+ }
+ h2{
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 100px;
+ }
+ .text1 {
+    font-size: 48px;
+    font-weight: 300;
+ }
+ h1 img{
+    width: 94px;
+ }
+ h1 {
+    float: right;
+ }
+.section {
+    clear: both;
+    width: 1440px;
+    height: 450px;
+    margin-top: 98px;
+}
+.text2 {
+    font-size: 14px;
+    display: inline-block;
+}
+.mainbox {
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 1225px;
+    height: 100%;
+ }
+.box1{
+    float: left;
+    width: 215px;
+    height: 100%;
+    margin: 0 0 0 30px;
+    background-color:#444444;
+    background-blend-mode: multiply;
+    background-image: url(../resources/images/index/kej.jpg);
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+ }
+ .box2{
+    float: left;
+    width: 215px;
+    height: 100%;
+    margin: 0 0 0 30px;
+    background-color:#444444;
+    background-blend-mode: multiply;
+    background-image: url(../resources/images/index/jungenjin.jpg);
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+ }
+ .box3{
+    float: left;
+    width: 215px;
+    height: 100%;
+    margin: 0 0 0 30px;
+    background-color:#444444;
+    background-blend-mode: multiply;
+    background-image: url(../resources/images/index/kopureum.jpg);
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+ }
+ .box4{
+    float: left;
+    width: 215px;
+    height: 100%;
+    margin: 0 0 0 30px;
+    background-color:#444444;
+    background-blend-mode: multiply;
+    background-image: url(../resources/images/index/seoungwoo.jpg);
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+ }
+ .box5{
+    float: left;
+    width: 215px;
+    height: 100%;
+    margin: 0 0 0 30px;
+    background-color:#444444;
+    background-blend-mode: multiply;
+    background-image: url(../resources/images/index/son.jpg);
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+ }
+.num{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 100;
+    margin: 14px 24px 0 158px;
+}
+.name{
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 256px 0 0 24px;
+
+}
+.company {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0 0 2px 24px;
+}
+.contents {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0 0 0 24px;
+}
+/* hover */
+.box1:hover{
+    background-blend-mode: normal;
+    
+}
+.box1 a:hover {
+    opacity: 0;
+}
+.box2:hover{
+    background-blend-mode: normal;
+}
+.box2 a:hover {
+    opacity: 0;
+}
+.box3:hover{
+    background-blend-mode: normal;
+}
+.box3 a:hover {
+    opacity: 0;
+}
+.box4:hover{
+    background-blend-mode: normal;
+}
+.box4 a:hover {
+    opacity: 0;
+}
+.box5:hover{
+    background-blend-mode: normal;
+}
+.box5 a:hover {
+    opacity: 0;
+}
