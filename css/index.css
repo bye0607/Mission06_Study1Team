@@ -59,6 +59,7 @@ h1 {
    height: 100%;
 }
 /* 이미지는 각자에 맞게 수정해주세요 */
+/* 김은주 */
 .box1 {
    float: left;
    width: 215px;
@@ -71,6 +72,7 @@ h1 {
    background-position: center;
    background-size: cover;
 }
+/* 정은진 */
 .box2 {
    float: left;
    width: 215px;
@@ -83,6 +85,7 @@ h1 {
    background-position: center;
    background-size: cover;
 }
+/* 고푸름 */
 .box3 {
    float: left;
    width: 215px;
@@ -95,6 +98,7 @@ h1 {
    background-position: center;
    background-size: cover;
 }
+/* 박승우 */
 .box4 {
    float: left;
    width: 215px;
@@ -107,6 +111,7 @@ h1 {
    background-position: center;
    background-size: cover;
 }
+/* 손정빈 */
 .box5 {
    float: left;
    width: 215px;
