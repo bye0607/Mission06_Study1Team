@@ -21,52 +21,15 @@ ol {
    font-family: 'Noto Sans KR', sans-serif;
 }
 /* header */
-header {
-   width: 100%;
-   height: 80px;
-   margin: 14px 0 0 0;
-   box-sizing: border-box;
-}
-h1 img {
+.navbar-brand img {
    width: 66px;
 }
-h1 {
-   float: left;
-   margin: 0 75px 0 0;
+.container-fluid{
+   width: 1200PX !important;
+   background-color: #fff !important;
 }
-nav {
-   float: left;
-   overflow: hidden;
-}
-nav ul li {
-   float: left;
-   margin: 16px 58px 0 0;
-   font-size: 18px;
-   font-weight: 300;
-}
-nav ul li a {
-   color: #292929;
-}
-nav_r {
-   float: right;
-   overflow: hidden;
-}
-nav_r ul li {
-   float: right;
-   margin: 20px 0 0 0;
-   font-size: 18px;
-   font-weight: 300;
-}
-nav_r ul li img {
-   width: 24px;
-   height: 24px;
-   background-position: center;
-   background-size: cover;
-}
-.nav_icon {
-   float: right;
-   width: 40px;
-   height: 40px;
+.fas {
+   margin-left: 20px;
 }
 /* nav hover */
 nav ul li a:hover {
@@ -102,6 +65,9 @@ legend {
    font-weight: 300;
    padding: 0 0 0 120px;
 }
+.addresstext {
+   margin-bottom: 0;
+}
 /* main_img */
 .main_img {
    height: 200px !important;
@@ -122,7 +88,7 @@ legend {
 .box2 {
    float: left;
    width: 380px;
-   height: 500px;
+   height: 580px;
    margin: 30px 9px 0 9px;
 }
 .box3 {
@@ -154,6 +120,7 @@ select {
 .address {
    margin: 5px 0 0 0;
    height: 30px;
+   width: 346px;
 }
 .purpose {
    margin: 5px 0 0 0;
@@ -170,6 +137,8 @@ select {
 .address_button {
    width: 100px;
    height: 30px;
+   float: right;
+   margin-top: 5px;
 }
 .submit_url {
    margin: 5px 0 0 282px;
