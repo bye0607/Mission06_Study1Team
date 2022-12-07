@@ -7,12 +7,71 @@
     font-size: 12px;
 }
 
+/* boreder-radius : 둥근속성 적용 */
 .must_input{
    margin: 5%;
-   width: 20%;
-   min-width: 200px;
+   border: 1px solid black ;
+   border-radius: 5px;
+   padding: 2%;
+   background-color: lightcyan;
 }
 
 #sample6_extraAddress{
    visibility:hidden ;
 }
+
+.post_input{
+    margin: 5%;
+    border: 1px solid black ;
+    border-radius: 5px;
+    padding: 2%;
+
+}
+
+.choice_Input{
+    margin: 5%;
+    border: 1px solid black ;
+    border-radius: 5px;
+    padding: 2%;
+
+}
+
+/* 푸터 시작 */
+
+footer{
+    width: 100%;
+   height: auto; 
+    float: left;
+    background: #EAEAEA;
+    color: black;
+    text-align: center;
+  }
+  
+  .down_logo{
+    padding-top: 5%;
+    width: 35%;
+    height: 100%;
+    float: left;
+  
+  }
+  
+  .copyright{
+    padding-top: 5%;
+    width: 35%;
+    height: 80%;
+    float: left;
+    border-left: 2px solid darkgray;
+    border-right: 2px solid darkgray;
+  
+  
+  }
+
+  .sns{
+    margin-top: 5%;
+    width: 30%;
+    height: 100%;
+    float: right;
+  
+  }
+
+  /* 푸터 끝 */
