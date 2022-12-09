@@ -12,7 +12,7 @@ a {
 }
 .container {
    margin: 0 auto;
-   max-width: 1440px;
+   max-width: 1200px;
    overflow: hidden;
    font-family: 'Noto Sans KR', sans-serif;
 }
@@ -111,19 +111,7 @@ h1 {
    background-position: center;
    background-size: cover;
 }
-/* 이름 */
-.box5 {
-   float: left;
-   width: 215px;
-   height: 100%;
-   margin: 0 0 0 30px;
-   background-color: #444444;
-   background-blend-mode: multiply;
-   background-image: url(../resources/images/index/seoungwoo.jpg);
-   box-sizing: border-box;
-   background-position: center;
-   background-size: cover;
-}
+
 .num {
    color: #fff;
    font-size: 40px;
