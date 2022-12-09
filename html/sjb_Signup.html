@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>과자먹자 회원가입 사이트</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/sjb_signup.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
 </head> 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+  <!-- 부트스트랩을 이용한 네비 바 -->
+  <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">과자먹자</a>
+          <a class="navbar-brand" href="#"><i class="fas fa-cookie-bite"></i><span class="logoName">과자먹자</span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,7 +47,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">로그아웃</a>
               </li>
-
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="검색어를 입력해주세요." aria-label="Search">
@@ -51,102 +54,116 @@
             </form>
           </div>
         </div>
-    </nav>
-    <div class="row">
-    <div class="col-md-4">
-      
-    <div class="must_input">
+  </nav>
+  <!-- 입력사항들  -->
+  <div class="row">
+    <!-- 필수 입력 -->
+    <div class="must_input col-md-4">
+      <form action="#" name="must" method="post" >
         <p>필수 입력 사항</p>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">이메일</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">비밀번호</label>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="Check_Password" placeholder="Check_Password">
-                <label for="floatingPassword">비밀번호 확인</label>
-            </div>
+        이메일
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+        ID
+        <input type="text" class="form-control" id="floatingInput" placeholder="아아디를 입력해주세요" required>
+        비밀번호
+        <input type="password" class="form-control" id="floatingInput" placeholder="비밀번호를 입력해주세요" required>
+        비밀번호 확인
+        <input type="password" class="form-control" id="floatingInput" placeholder="비밀번호를 한번 더 입력해주세요" required>
+        <div class="must_button">
+          <button class="submit">확인</button>
+          <button class="cancle">취소</button>
         </div>
+      </form>
     </div>
-    </div>
-    <div class="col-md-4">
-    <div class="post_input">
-        <p>배송지 입력 사항</p>
+   
+    <!-- 배송 받을 주소 입력 -->
+    <div class="post_input  col-md-4">
+      <form action="#" name="post" method="post" >
+        <p>기본 배송지 입력</p>
+        성함
+        <input type="text" class="form-control" id="floatingInput">
+        휴대전화 : <br>
+        <select name='cellphone' >
+          <option value='010' selected >010</option>
+          <option value='011'>011</option>
+          <option value='016'>016</option>
+        </select><!--select/option/seleted 010 / pattern-->
+        <input type="tel" pattern="[0-9]{4}-[0-9]{4}" placeholder="0000-0000">
+      
+      <!-- kakao우편번호 api -->
+        <br>주소입력<br>
         <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
         <input type="text" id="sample6_postcode" placeholder="우편번호">
         <input type="text" id="sample6_address" placeholder="주소"><br>
         <input type="text" id="sample6_detailAddress" placeholder="상세주소">
         <input type="text" id="sample6_extraAddress" placeholder="참고항목">
-
         <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <script>
-            function sample6_execDaumPostcode() {
-                new daum.Postcode({
-                    oncomplete: function(data) {
-                        // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+        function sample6_execDaumPostcode() {
+          new daum.Postcode({
+            oncomplete: function(data) {
+              // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
                         // 각 주소의 노출 규칙에 따라 주소를 조합한다.
                         // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
                         var addr = ''; // 주소 변수
                         var extraAddr = ''; // 참고항목 변수
-
+                        
                         //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
                         if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
-                            addr = data.roadAddress;
+                          addr = data.roadAddress;
                         } else { // 사용자가 지번 주소를 선택했을 경우(J)
-                            addr = data.jibunAddress;
+                          addr = data.jibunAddress;
                         }
-
+                        
                         // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
                         if(data.userSelectedType === 'R'){
-                            // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                            // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                            if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                                extraAddr += data.bname;
-                            }
-                            // 건물명이 있고, 공동주택일 경우 추가한다.
-                            if(data.buildingName !== '' && data.apartment === 'Y'){
-                                extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                            }
-                            // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                            if(extraAddr !== ''){
-                                extraAddr = ' (' + extraAddr + ')';
-                            }
-                            // 조합된 참고항목을 해당 필드에 넣는다.
-                            document.getElementById("sample6_extraAddress").value = extraAddr;
+                          // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                          // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                          if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                            extraAddr += data.bname;
+                          }
+                          // 건물명이 있고, 공동주택일 경우 추가한다.
+                          if(data.buildingName !== '' && data.apartment === 'Y'){
+                            extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                          }
+                          // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                          if(extraAddr !== ''){
+                            extraAddr = ' (' + extraAddr + ')';
+                          }
+                          // 조합된 참고항목을 해당 필드에 넣는다.
+                          document.getElementById("sample6_extraAddress").value = extraAddr;
                         
                         } else {
-                            document.getElementById("sample6_extraAddress").value = '';
+                          document.getElementById("sample6_extraAddress").value = '';
                         }
-
+                        
                         // 우편번호와 주소 정보를 해당 필드에 넣는다.
                         document.getElementById('sample6_postcode').value = data.zonecode;
                         document.getElementById("sample6_address").value = addr;
                         // 커서를 상세주소 필드로 이동한다.
                         document.getElementById("sample6_detailAddress").focus();
-                    }
+                      }
                 }).open();
-            }
+              }
         </script>
         <br>
-    <label for="exampleFormControlTextarea1" class="form-label">배송메세지</label>
-    <textarea  class="form-control col-md-4"  id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1" class="form-label">배송메세지</label>
+        <textarea  class="form-control col-md-4"  id="exampleFormControlTextarea1" rows="3"></textarea>
+      </form>
     </div>
-</div>
-<div class="col-md-4">
-  <!-- 받으시는 분 성함, 전화번호, 주소, 배송메세지 -->
-    <div class="choice_Input"> 
+    <!-- 선택 입력 -->
+    <div class="choice_Input  col-md-4"> 
+      <form action="#" name="choice" method="post" >
         <p>선택 입력 사항</p>
         <div class="form-floating mb-3">
           <div class="choice_Input_name">
-            <p>정보 수신 동의</p>
+          <p>정보 수신 동의</p>
           </div>
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
-              이메일
+            이메일
             </label>
           </div>
           <div class="form-check form-check-inline">
@@ -159,12 +176,13 @@
         <div class="choice_Input_name">
           <p>성별</p>
         </div>
+        <!-- 1개만 선택 가능한 체크박스 속성 -->
         <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          남성
-        </label>
-      </div>
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            남성
+          </label>
+        </div>
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
@@ -185,45 +203,48 @@
         <p>좋아하는 색</p>
         <input type="color">
       </div>
-      </div>
-        
+      </form>
     </div>
-    <div class="d-grid gap-2 d-md-block">
-      <button class="btn btn-primary btn-sm" type="button">가입하기</button>
-      <button class="btn btn-primary btn-sm" type="button">취소하기</button>
+      <!-- 추천인 입력  -->
+    <div class="Invit_Input  col-md-4"> 
+      <form action="#" name="login" method="post" >
+        <p>추천인 입력하기</p>
+        <input class="form-control" type="text" placeholder=" 추천인 입력시 배송비 무료 쿠폰 지급!(생략 가능합니다.)">
+      </form>
     </div>
-    
+    <div class="signup_button">
+      <button class=" submit btn btn-primary" type="button">가입하기</button>
+      <button class="btn btn-primary" type="button">취소하기</button>
+    </div>
   </div>
-  <div class="bxslider center-block">
-    <div><img class="img-rounded" src="../resources/images/son/cookie.jpg"></div>
-    <div><img class="img-rounded" src="../resources/images/son/macaroons-g73dc71779_1920.jpg"></div>
-  </div>
+  <!-- 푸터 -->
   <footer>
-  <div class="down_logo col-md-4">
-    <span>
-      상호 : (주)과자먹자<br>
-      대표 : 이과자<br>
-      주소 : 서울특별시 용산구 한강대로 52-5 3층<br>
-      사업자 등록 번호 521-4567-99876<br>
-      제휴 문의 snackeat@snackeat.co.kr<br>       
-    </span>
-  </div>
-  <div class="copyright col-md-4">
-    <span>
-      <h2>고객 상담 센터</h2><br>
-      <h3>1588-4152</h3><br>
-          상담시간 : 오전 10:00 ~ 오후 5:00<br>
-          점심시간 : 오후 12:00 ~ 오후 1:00<br>         
-    </span><br>
-    <span>Copyright &copy; 과자먹자 . All rights reserved.</span><br>
-  </div>
-  <div class="sns col-md-4">
-    <div id="kind">
-      <img class="instar" src="../resources/images/son/instagram_icon.png" alt="인스타">
-      <img class="youtube" src="../resources/images/son/youtubelogoicon.svg" alt="유투브">
-      <img class="twitter" src="../resources/images/son/twitter logo_icon.png" alt="트위터">
+    <div class="down_logo col-md-4">
+      <span>
+        상호 : (주)과자먹자<br>
+        대표 : 이과자<br>
+       주소 : 서울특별시 용산구 한강대로 52-5 3층<br>
+       사업자 등록 번호 521-4567-99876<br>
+       제휴 문의 snackeat@snackeat.co.kr<br>       
+     </span>
     </div>
-  </div>
-</footer>    
-  </body>
+    <div class="copyright col-md-4">
+      <span>
+        <h2>고객 상담 센터</h2><br>
+        <h3>1588-4152</h3><br>
+        상담시간 : 오전 10:00 ~ 오후 5:00<br>
+        점심시간 : 오후 12:00 ~ 오후 1:00<br>         
+      </span>
+      <br>
+      <span>Copyright &copy; 과자먹자 . All rights reserved.</span><br>
+    </div>
+    <div class="sns col-md-4">
+      <div id="kind">
+        <img class="instar" width="30px" src="../resources/images/son/instagram_icon.png" alt="인스타">
+        <img class="youtube" width="30px" src="../resources/images/son/youtubelogoicon.svg" alt="유투브">
+        <img class="twitter" width="30px" src="../resources/images/son/twitter logo_icon.png" alt="트위터">
+      </div>
+    </div>
+  </footer>    
+</body>
 </html>
