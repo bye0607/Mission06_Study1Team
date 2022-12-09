@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>KONG82 | 회원가입 / 로그인</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="shortcut ico" href="../resources/images/kopureum/coffee_bean_large_icon.png">
+	<link rel="icon" href="../resources/images/kopureum/coffee_bean_large_icon.png">
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="../css/kopureum_signup.css">
+	<!-- JavaScript Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+		defer="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"
+		integrity="sha256-ivk71nXhz9nsyFDoYoGf2sbjrR9ddh+XDkCcfZxjvcM=" crossorigin="anonymous"></script>
+
+	<script src="../javascript/kopureum_signup.js" defer></script>
+</head>
+
+<body>
+	<!-- 메인네비 -->
+	<nav class="main-nav">
+		<ul>
+			<li><a class="signin" href="#0">로그인</a></li>
+			<li><a class="signup" href="#0">회원가입</a></li>
+		</ul>
+	</nav>
+	<!-- 스위처 -->
+	<div class="user-modal">
+		<div class="user-modal-container">
+			<ul class="switcher">
+				<li><a href="#0">로그인</a></li>
+				<li><a href="#0">회원가입</a></li>
+			</ul>
+			<!-- 로그인 -->
+			<div id="login">
+				<form class="form">
+
+					<p class="fieldset">
+						<label class="image-replace username" for="signin-username">Username</label>
+						<input class="full-width has-padding has-border" id="signin-username" type="username"
+							placeholder="아이디" pattern="/^[0-9a-zA-Z]+$/">
+						<span class="error-message">아이디는 알파벳과 숫자만 입력할 수 있습니다</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="password"
+							placeholder="비밀번호" pattern="/^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W))(?=.*[!@#$%^*+=-]).{6,30}$/">
+						<a href="#0" class="hide-password">Show</a>
+						<span class="error-message">특수문자가 최소 1개 이상 포함된 영어,숫자 조합의 6~30개의 글자를 입력해주세요</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">아이디 기억하기</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Login">
+					</p>
+
+				</form>
+
+				<p class="form-bottom-message"><a href="#0">비밀번호 찾기 🔍</a></p>
+
+			</div>
+			<!-- 회원가입 -->
+			<div id="signup">
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="username"
+							placeholder="아이디" pattern="/^[0-9a-zA-Z]+$/">
+						<span class="error-message">아이디는 알파벳과 숫자만 입력할 수 있습니다</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email"
+							placeholder="이메일"
+							pattern="/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;">
+						<span class="error-message">유효한 메일주소를 입력해 주세요!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="password"
+							placeholder="비밀번호" pattern="/^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W))(?=.*[!@#$%^*+=-]).{6,30}$/">
+						<a href="#0" class="hide-password">Show</a>
+						<span class="error-message">특수문자가 최소 1개 이상 포함된 영어,숫자 조합의 6~30개의 글자를 입력해주세요</span>
+					</p>
+
+					<p class="fieldset">
+						<hr>
+					</p>
+					<p class="event_head">이벤트에 참여시 기념일에 선물을 보내드립니다 <br>추가 정보를 등록 해주세요!</p>
+
+					</p>
+
+					<p class="fieldset">
+					<fieldset class="post">
+						<legend class="post">주소 등록하기</legend>
+						<input type="text" id="sample6_postcode" placeholder="우편번호">
+						<input type="button" onclick="sample6_execDaumPostcode()" value="검색"><br>
+						<input type="text" id="sample6_address" placeholder="주소"><br>
+						<input type="text" id="sample6_detailAddress" placeholder="상세주소">
+					</fieldset>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace phone" for="signup-phone">phone</label>
+						<select class="form-select" aria-label="Default select example">
+							<option selected>010 - </option>
+							<option value="1">010</option>
+							<option value="2">011</option>
+							<option value="3">016</option>
+						</select>
+						<input class="full-width has-padding has-border" id="signup-phone" type="tel"
+							placeholder="1234-5678 (- 포함해 입력해주세요)" pattern="/^([1-9]{1}[0-9]{2,3})-?([0-9]{4})$/"
+							title="1234-5678">
+						<span class="error-message">유효한 전화번호가 아닙니다</span>
+					</p>
+
+					<fieldset class="anniversary">
+						<legend class="anniversary">기념일을 선택 해주세요</legend>
+						<p class="anniversary">
+							<label class="anniversary" id="anniversary" type="date" placeholder="anniversary"></label>
+							<input type="date" for="anniversary" class="full-width has-padding has-border"
+								id="anniversary" value="Submit">
+
+						</p>
+
+						<div class="form-check anniversary">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">
+								결혼 기념일
+							</label>
+						</div>
+
+						<div class="form-check anniversary">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">
+								생일
+							</label>
+						</div>
+
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+							<label class="form-check-label" for="flexCheckChecked">
+								기타 기념일
+							</label>
+						</div>
+
+					</fieldset>
+					</p>
+
+					<p>좋아하는 <strong>Color</strong> 를 선택해 주세요!</p>
+
+
+					<label for="favcolor">좋아하는 색 선택하기 😃 </label>
+					<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c"
+						title="Choose your color">
+					<br>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+						<label class="form-check-label" for="flexRadioDefault1">
+							가입 약관에 동의합니다.
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+							checked>
+						<label class="form-check-label" for="flexRadioDefault2">
+							이벤트 응모에 동의합니다.
+						</label>
+					</div>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+
+
+				</form>
+			</div>
+			<!-- Password 재설정 -->
+			<div id="reset-password">
+				<p class="form-message">E-mail 주소를 입력해주세요</br> 새 비밀번호를 설정하실 수 있도록 링크를 쏴드리죠!</p>
+
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace email" for="reset-email">이메일</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email"
+							placeholder="E-mail"
+							pattern="/^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;">
+						<span class="error-message">유효한 메일주소를 입력해주세요</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="form-bottom-message"><a href="#0">로그인 화면으로 돌아가기</a></p>
+				<p class="form-bottom-message"><a href="#0" class="close-form">닫기</a></p>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		// KAKAO MAPS
+		jQuery.fn.putCursorAtEnd = function () {
+			return this.each(function () {
+				if (this.setSelectionRange) {
+					var len = $(this).val().length * 2;
+					this.setSelectionRange(len, len);
+				} else {
+					$(this).val($(this).val());
+				}
+			});
+		};
+		function sample6_execDaumPostcode() {
+			new daum.Postcode({
+				oncomplete: function (data) {
+					var addr = ''; // 주소 변수
+					var extraAddr = ''; // 참고항목 변수
+
+					//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+					if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+						addr = data.roadAddress;
+					} else { // 사용자가 지번 주소를 선택했을 경우(J)
+						addr = data.jibunAddress;
+					}
+
+					// 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+					if (data.userSelectedType === 'R') {
+						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+							extraAddr += data.bname;
+						}
+						// 건물명이 있고, 공동주택일 경우 추가한다.
+						if (data.buildingName !== '' && data.apartment === 'Y') {
+							extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+						}
+						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+						if (extraAddr !== '') {
+							extraAddr = ' (' + extraAddr + ')';
+						}
+						// 조합된 참고항목을 해당 필드에 넣는다.
+						document.getElementById("sample6_extraAddress").value = extraAddr;
+
+					} else {
+						document.getElementById("sample6_extraAddress").value = '';
+					}
+
+					// 우편번호와 주소 정보를 해당 필드에 넣는다.
+					document.getElementById('sample6_postcode').value = data.zonecode;
+					document.getElementById("sample6_address").value = addr;
+					// 커서를 상세주소 필드로 이동한다.
+					document.getElementById("sample6_detailAddress").focus();
+				}
+			}).open();
+		};
+	</script>
+</body>
+
+</html>
