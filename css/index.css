@@ -98,7 +98,7 @@ h1 {
    background-position: center;
    background-size: cover;
 }
-/* 박승우 */
+/* 손정빈 */
 .box4 {
    float: left;
    width: 215px;
@@ -106,12 +106,12 @@ h1 {
    margin: 0 0 0 30px;
    background-color: #444444;
    background-blend-mode: multiply;
-   background-image: url(../resources/images/index/seoungwoo.jpg);
+   background-image: url(../resources/images/index/son.jpg);
    box-sizing: border-box;
    background-position: center;
    background-size: cover;
 }
-/* 손정빈 */
+/* 이름 */
 .box5 {
    float: left;
    width: 215px;
@@ -119,7 +119,7 @@ h1 {
    margin: 0 0 0 30px;
    background-color: #444444;
    background-blend-mode: multiply;
-   background-image: url(../resources/images/index/son.jpg);
+   background-image: url(../resources/images/index/seoungwoo.jpg);
    box-sizing: border-box;
    background-position: center;
    background-size: cover;
